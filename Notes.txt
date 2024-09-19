@@ -1,0 +1,6 @@
+~ Exposing exceptions is not good , so make sure you handle it well in your backend code
+
+~ Global catches are put in end to handle the exceptions
+  they are middlewares
+  they are put in end
+  they have 4 params (err,req,res,next)
