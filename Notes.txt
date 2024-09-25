@@ -4,3 +4,13 @@
   they are middlewares
   they are put in end
   they have 4 params (err,req,res,next)
+
+~ We can Pass data from one middleware to another 
+  One ugly way to do so is shove everything into req   
+
+~ Zod is basically used for user validation   
+
+~ Hashing  - 1 Way , PW is stored in some gibberish and then our pw is converted into same and is matched
+  Encryption - 2 Way (key is needed) PW is encrypted and is decrypted back 
+  JWT (Json Web token)  converts our json into a string and anyone who has this string can actually seee the  input , Anyone can decode the string but only who have the PW can verify 
+  Local Storage - When user login , a jwt is created and is stored in local storage and is relayed in every request

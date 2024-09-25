@@ -73,6 +73,9 @@ function kidneyMiddleWare(req, res, next) {
         res.send("you have " + len + " " + "kidneys")
     })
 
+    app.use((err,req,res,next)=>{
+      console.log("Something is wrong....")
+    })
     
 
 app.listen(3000);
