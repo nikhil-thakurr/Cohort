@@ -15,6 +15,10 @@
   JWT (Json Web token)  converts our json into a string and anyone who has this string can actually seee the  input , Anyone can decode the string but only who have the PW can verify 
   Local Storage - When user login , a jwt is created and is stored in local storage and is relayed in every request
 
-  ~ JWT Token can be stored in either :
+ ~ JWT Token can be stored in either :
     Cookies ( preferable way )
     Local Storage 
+
+~Debouncing - Delay calling the API many times , instead just call fewer times with a time gap
+
+~Throttling = When Client request too much , so we can handle it like we do in debouncing
