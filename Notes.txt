@@ -22,3 +22,5 @@
 ~Debouncing - Delay calling the API many times , instead just call fewer times with a time gap
 
 ~Throttling = When Client request too much , so we can handle it like we do in debouncing
+
+~ Error handling middleware ,takes 4 args (err,req,res,next)
