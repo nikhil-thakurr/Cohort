@@ -29,3 +29,9 @@
   It makes easy to do reconciliation
 
 ~ React memoization hook - It stops re rendering a component when it props are unchanged
+
+~Lazy Load - User should get the code for what he landed on instead of whole code , so lazy loading helps you do that
+
+~ Push state down as much as possible to lessen the number of re renders
+
+~ In fetch we have to do response.json/text Etc depending upon the returned value but in axios we dont have to do that
