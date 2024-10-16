@@ -35,3 +35,7 @@
 ~ Push state down as much as possible to lessen the number of re renders
 
 ~ In fetch we have to do response.json/text Etc depending upon the returned value but in axios we dont have to do that
+
+~ Custom hooks uses normal hooks internally and starts with Use
+
+~ There is a Library called swr that is a hook to fetch data 
