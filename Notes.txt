@@ -39,3 +39,16 @@
 ~ Custom hooks uses normal hooks internally and starts with Use
 
 ~ There is a Library called swr that is a hook to fetch data 
+
+~ cpp,c ,java are strongly type while python ,js are loosely
+
+~ tsc --init , tsc -b (to make js file ,then run the js file not ts)
+
+~ target in ts.config specifiees to which js will the ts converts like (es6 ,es5)
+
+~ root contains the file of ts while dist/build contains the js file
+
+~Zod is for run time not compile time (99% times)
+
+~Interfaces can be implemented as a classes where as types can not
+  Types can be used to do ORs ANds 
