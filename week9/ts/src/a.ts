@@ -80,10 +80,21 @@
 // }
 
 
-type numcheck = number[]
+// type numcheck = number[]
 
-function helper(num : number[]){
-    console.log("ok")
+// function helper(num : number[]){
+//     console.log("ok")
+// }
+
+// helper([1,2,3])
+
+
+enum Direction {
+    up,
+    down,
+    left,
+    right
+
 }
 
-helper([1,2,3])
+type Directions = "up"| "down" |"left" |"right"
