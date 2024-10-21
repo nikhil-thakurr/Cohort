@@ -89,12 +89,39 @@
 // helper([1,2,3])
 
 
-enum Direction {
-    up,
-    down,
-    left,
-    right
+// enum Direction {
+//     up,
+//     down,
+//     left,
+//     right
+
+// }
+
+// type Directions = "up"| "down" |"left" |"right"
+
+// ---------------------GENERICS---------------------------
+
+
+type input =number | string ;
+
+// function helper(arr:input[]){
+//     return arr[0];
+// }
+
+// const val=helper(["nikhil"]);
+
+// //TS is not giving error as only one type should be allowed
+// const val2=helper(["nikhil",1,2]);
+
+
+// //this gives error as it cannot understand the return type of it 
+// val.toUpperCase();
+
+function helper<T>(arr:T):T{
+
+    return arr;
 
 }
 
-type Directions = "up"| "down" |"left" |"right"
+const op1 = helper<string>("nikhil");
+const op2 = helper<number>(1);
