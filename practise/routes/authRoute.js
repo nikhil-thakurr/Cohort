@@ -3,6 +3,9 @@ const User = require("../user");
 const authRouter = express.Router();
 const bcrypt = require('bcrypt');
 const zod= require ("zod");
+const jwt = require('jsonwebtoken');
+const authMiddleWare = require("../authMiddleware")
+
 
 const userSchema = zod.object({
     name:zod.string(),
@@ -70,9 +73,31 @@ authRouter.post("/login",async (req,res)=>{
              message : "Wrong Password"
          })
      }
+
+     const token = jwt.sign({ _id: checkUser._id}, 'nik');
+
     res.json({
-        message:"Logged In"
+        message:"Logged In",
+        token:token
     })
+
+})
+
+authRouter.get("/profile",authMiddleWare,(req,res)=>{
+
+    try{
+
+        const user = req.user;
+
+        res.json({
+            message:"User Profile",
+            data:user
+        })
+
+    }
+    catch(err){
+        console.log("err is :",err);
+    }
 
 })
 
