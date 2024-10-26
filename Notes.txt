@@ -52,3 +52,13 @@
 
 ~Interfaces can be implemented as a classes where as types can not
   Types can be used to do ORs ANds 
+
+~ npx prisma migrate dev --name xyz (to run migrations)
+~ npx prisma generate  
+  import {PrismaClient} from "@prisma/client"
+
+  const prisma = new PrismaClient(); 
+
+  // prisma.user.create()
+
+~ Cloud Fare dont use node run time   but have their own runtime on top of v8 
