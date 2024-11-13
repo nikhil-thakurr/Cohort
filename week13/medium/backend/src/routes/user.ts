@@ -2,6 +2,7 @@ import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 import { decode, sign, verify } from 'hono/jwt'
 import { Hono } from 'hono'
+import { signUpInput,signInInput} from '@nikhil_thakur_code/medium-common'
 
 export const userRouter = new Hono<{
   Bindings :{
@@ -11,10 +12,16 @@ export const userRouter = new Hono<{
 }>()
 
 
-userRouter.post('/signup', async (c) => {
-    console.log("Database URL:", c.env.DATABASE_URL); // Debug statement
+userRouter.post('/signup', async (c) => {    
     const body = await c.req.json();
-  
+    const {success} =signUpInput.safeParse(body);
+
+    if(!success){
+      c.status(411);
+      return c.json({
+        message:"Inputs Are Incorect"
+      })
+    }
     if (!c.env.DATABASE_URL) {
       console.error("DATABASE_URL is undefined. Please check the environment variables.");
       return c.text("Internal Server Error: Database URL not set", 500);
@@ -29,7 +36,7 @@ userRouter.post('/signup', async (c) => {
     try {
       const user=  await prisma.user.create({
         data: {
-          userName: body.userName,
+          username: body.username,
           name: body.name,
           password: body.password,
         },
@@ -51,7 +58,15 @@ userRouter.post('/signup', async (c) => {
   
   userRouter.post('/signin', async (c) => {
     const body = await c.req.json();
-  
+    const {success} =signInInput.safeParse(body);
+
+    if(!success){
+      c.status(411);
+      return c.json({
+        message:"Inputs Are Incorect"
+      })
+    }
+
     if (!c.env.DATABASE_URL) {
       return c.text("Internal Server Error: Database URL not set", 500);
     }
@@ -65,7 +80,7 @@ userRouter.post('/signup', async (c) => {
     try {
       const user=  await prisma.user.findFirst({
         where: {
-          userName: body.userName,
+          username: body.username,
           password: body.password,
         },
       });
