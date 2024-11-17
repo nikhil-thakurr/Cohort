@@ -1,9 +1,8 @@
 import { SignedUpInput } from "@nikhil_thakur_code/medium-common";
-import React, { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import  { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
-import { send } from "vite";
 
 const Auth = ({type}:{type:"signup" | "signin"}) => {
 

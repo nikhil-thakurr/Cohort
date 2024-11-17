@@ -1,5 +1,3 @@
-import React from 'react'
-import AppBar from './AppBar'
 import { Link } from 'react-router-dom'
 
 interface BlogCardType {
