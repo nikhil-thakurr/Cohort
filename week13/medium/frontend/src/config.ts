@@ -1,0 +1,1 @@
+export const BACKEND_URL = "https://medium.nt34542.workers.dev"
