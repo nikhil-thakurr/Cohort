@@ -1,8 +1,15 @@
 
 import { Avatar } from "./BlogCard";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import LogoutImage from "../assets/power_16799418.png"
 
 const AppBar = () => {
+
+  const navigate = useNavigate();
+
+  const handlelogout =()=>{
+    navigate("/signin");
+  }
   return (
     <div className="border-b py-4 mb-6 flex justify-between px-10">
       <Link to={"/blogs"}>
@@ -21,7 +28,8 @@ const AppBar = () => {
         </div>
         </Link>
         <div>
-          <Avatar name="Nikhil" />
+          {/* <Avatar name="User" /> */}
+          <div className="bg-white cursor-pointer h-8 w-8" onClick={handlelogout}><img src={LogoutImage} /></div>
         </div>
       </div>
     </div>

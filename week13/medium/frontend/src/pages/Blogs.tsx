@@ -26,7 +26,7 @@ const Blogs = () => {
     <div>
         <AppBar/>
         {blogs.map((blog)=>
-            <BlogCard authorName={blog.author.name || "Anonymous User"} title={blog.title} content={blog.content} date='2nd March 2024' id={blog.id} />
+            <BlogCard authorName={blog.author.name || "Anonymous User"} title={blog.title} content={blog.content} date='2nd December 2024' id={blog.id} />
         )}
        
     </div>

@@ -18,8 +18,8 @@ const BlogCard = ({authorName, title,content,date,id}:BlogCardType) => {
     <div className='border-b w-1/2 flex flex-col p-2 mx-auto mb-6 cursor-pointer'>
 
         <div className='mb-2'> <Avatar name={authorName} /> {authorName} . {date}</div>
-        <div className='text-3xl font-bold'>{title}</div>
-        <div className='text-md mt-2 font-thin'>{content.slice(0,200)} ......</div>
+        <div className='text-3xl font-bold text-wrap'>{title}</div>
+        <div className='text-md mt-2 font-thin text-wrap w-full'>{content.slice(0,200)} ......</div>
         <div className='text-slate-500 mt-4'> {Math.ceil(content.length/100)} Minutes read</div>
 
     </div>
