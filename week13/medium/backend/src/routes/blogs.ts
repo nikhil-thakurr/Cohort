@@ -121,9 +121,10 @@ blogRouter.get("/mass",async (c)=>{
           title:true,
           content:true,
           id:true,
+          authorId:true,
           author:{
             select:{
-              name:true
+              name:true,
             }
           }
         }
@@ -132,6 +133,41 @@ blogRouter.get("/mass",async (c)=>{
       return c.json({
         blogs
       })
+})
+
+blogRouter.get("/userBlogs",async (c)=>{
+
+  const prisma = new PrismaClient({
+    datasources: {
+      db: { url: c.env.DATABASE_URL },
+    },
+  }).$extends(withAccelerate());
+
+  const userid = c.get("userId");
+
+  console.log(userid)
+   try{
+    const blog = await prisma.user.findMany({
+
+      where:{
+        id:Number(userid)
+      },
+      select:{
+        name:true,
+        blogs :true
+      }
+
+    })
+    return c.json(blog);
+
+
+   }
+   catch(err){
+     c.status(400);
+     return c.json({
+      message: "Something Went Wrong : "+ err
+     })
+   }
 })
 
 
@@ -174,3 +210,7 @@ blogRouter.get("/:id",async(c)=>{
 
  
 })
+
+
+
+

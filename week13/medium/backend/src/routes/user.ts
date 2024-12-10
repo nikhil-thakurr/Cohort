@@ -89,6 +89,8 @@ userRouter.post('/signup', async (c) => {
         c.status(403);
         return c.text("Wrong Credentials");
       }
+
+      console.log(user)
   
       const token= await sign({
         id:user.id
@@ -102,7 +104,4 @@ userRouter.post('/signup', async (c) => {
       await prisma.$disconnect();
     }
   });
-  
-
- 
   
