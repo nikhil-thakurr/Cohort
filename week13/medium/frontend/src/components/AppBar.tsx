@@ -13,7 +13,7 @@ const AppBar = () => {
   }
 
   const handlemyblogs=()=>{
-    const blog = axios.get()
+    navigate("/userBlogs");
   }
 
   return (
