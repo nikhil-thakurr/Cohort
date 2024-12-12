@@ -12,9 +12,6 @@ export const Publish = () => {
     const navigate = useNavigate();
     const editor = useRef(null);
 	const [content, setContent] = useState('');
-    const config = {
-			placeholder: 'Start typing...'
-		};
     return <div>
         <AppBar />
         <div className="flex justify-center w-full pt-8"> 
@@ -30,7 +27,6 @@ export const Publish = () => {
             <JoditEditor
 			ref={editor}
 			value={content}
-            config={config}
 			onChange={(e) => {setContent(e)}}
 		/>
                 <button onClick={async () => {
