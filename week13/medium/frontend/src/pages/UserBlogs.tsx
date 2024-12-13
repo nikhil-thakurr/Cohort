@@ -29,11 +29,14 @@ const UserBlogs = () => {
   return (
     <>
     <AppBar/>
-    <div>
-    {userblog.map((blog)=>
-            <BlogCard authorName={user || "Anonymous User"} title={blog?.title} content={blog.content} date='2nd December 2024' id={blog.id} />
-        )}
-    </div>
+    {(userblog && userblog.length>0)?  <div>
+        
+        {userblog.map((blog)=>
+                <BlogCard authorName={user || "Anonymous User"} title={blog?.title} content={blog.content} date='2nd December 2024' id={blog.id} />
+            )}
+        </div>: <><p className='text-4xl font-bold text-center'>No blogs available.</p>
+                        <p className='text-lg font-semoibold text-center'>Please click on new to post blogs</p></> }
+  
     </>
   )
 }
