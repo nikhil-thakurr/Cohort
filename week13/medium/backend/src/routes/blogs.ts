@@ -212,5 +212,33 @@ blogRouter.get("/:id",async(c)=>{
 })
 
 
+blogRouter.delete("/:id",async(c)=>{
+
+  const id = c.req.param("id");
+  const prisma = new PrismaClient({
+    datasources: {
+      db: { url: c.env.DATABASE_URL },
+    },
+  }).$extends(withAccelerate());
+
+
+  try{
+
+    const user = await prisma.blog.delete({
+      where :{
+        id : Number(id)
+      }
+    })
+
+    return c.text("Blog deleted Successfully")
+
+  }
+  catch(err){
+    c.status(400);
+    return c.text("Some Error Occured" +err);
+  }
+
+})
+
 
 
