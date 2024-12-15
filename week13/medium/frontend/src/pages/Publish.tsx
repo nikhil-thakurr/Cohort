@@ -8,7 +8,6 @@ import JoditEditor from 'jodit-react';
 
 export const Publish = () => {
     const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
     const navigate = useNavigate();
     const editor = useRef(null);
 	const [content, setContent] = useState('');

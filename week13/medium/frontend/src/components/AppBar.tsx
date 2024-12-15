@@ -1,8 +1,7 @@
 
-import { Avatar } from "./BlogCard";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 import LogoutImage from "../assets/power_16799418.png"
-import axios from "axios";
 
 const AppBar = () => {
 

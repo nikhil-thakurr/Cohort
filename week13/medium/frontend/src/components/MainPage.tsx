@@ -1,4 +1,4 @@
-import React from 'react'
+
 import coverPageImage from '../assets/4_SdjkdS98aKH76I8eD0_qjw.webp'
 import { useNavigate } from 'react-router-dom'
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AppBar from "../components/AppBar";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
@@ -23,7 +23,7 @@ const UserBlogs = () => {
     setuser(blogs.data[0].name);
   };
 
-  const handleDelete = async (id :Number) => {
+  const handleDelete = async (id :number) => {
     try {
       await axios.delete(`${BACKEND_URL}/api/v1/blog/${id}`, {
         headers: {
