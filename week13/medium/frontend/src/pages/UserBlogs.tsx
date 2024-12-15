@@ -5,7 +5,7 @@ import { BACKEND_URL } from "../config";
 import BlogCard from "../components/BlogCard";
 
 const UserBlogs = () => {
-  const [userblog, setuserblog] = useState([]);
+  const [userblog, setuserblog] = useState<Blog[]>([]);
   const [user, setuser] = useState("Anonymous User");
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const UserBlogs = () => {
     setuser(blogs.data[0].name);
   };
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id :Number) => {
     try {
       await axios.delete(`${BACKEND_URL}/api/v1/blog/${id}`, {
         headers: {
@@ -35,6 +35,14 @@ const UserBlogs = () => {
       console.error("Error deleting the blog:", error);
     }
   };
+
+  type Blog = {
+    id: number;
+    title: string;
+    content: string;
+    date: string;
+  };
+  
 
   return (
     <>
