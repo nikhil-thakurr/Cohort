@@ -65,3 +65,8 @@ npx prisma generate --no
 ~ npm install @prisma/extension-accelerate
 
 ~ Cloud Fare dont use node run time   but have their own runtime on top of v8 
+
+~ Next Js Benefits :
+    -SEO Optimisation
+    -Avoids Waterfalling
+    -Routing in house SSR
